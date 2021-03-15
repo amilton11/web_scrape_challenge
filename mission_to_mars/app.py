@@ -12,6 +12,7 @@ mongo = PyMongo(app)
 @app.route("/")
 def index():
     mars_mission = mongo.db.mars.find_one()
+    print(mars_mission['mars_hemisphere'])
     return render_template("index.html", mars_mission=mars_mission)
 
 
